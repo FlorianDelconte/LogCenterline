@@ -13,7 +13,7 @@ set (CMAKE_CXX_STANDARD_REQUIRED TRUE)
 # -----------------------------------------------------------------------------
 # DGtal dependencies
 # -----------------------------------------------------------------------------
-FIND_PACKAGE(DGtal 1.2 REQUIRED)
+FIND_PACKAGE(DGtal 1.4 REQUIRED)
 INCLUDE_DIRECTORIES(${DGTAL_INCLUDE_DIRS})
 LINK_DIRECTORIES(${DGTAL_LIBRARY_DIRS})
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
@@ -43,5 +43,5 @@ SET(PCLLib ${PCL_SEGMENTATION_LIBRARIES})
 ADD_EXECUTABLE(centerline Main_centerline
     ../Centerline/SimpleNormalAccumulator
     Centerline/CenterlineMultiCore Centerline/Centerline ../Common/Statistic )
-TARGET_LINK_LIBRARIES(centerline  ${DGTAL_LIBRARIES} ${DGtalToolsLibDependencies} ${PCLLib} ${GSL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} )
+TARGET_LINK_LIBRARIES(centerline  ${DGTAL_LIBRARIES} ${PCLLib} ${GSL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} )
 
